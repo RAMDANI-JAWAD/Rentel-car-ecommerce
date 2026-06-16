@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Heart, Gauge, Calendar, Fuel, Eye, ArrowRight } from 'lucide-react'
 import { Card, CardContent } from '../components/ui/card'
@@ -12,9 +11,7 @@ const fuelLabels = {
   Électrique: 'Électrique',
 }
 
-export default function CarCard({ car }) {
-  const [fav, setFav] = useState(false)
-
+export default function CarCard({ car, isFav, onToggleFav }) {
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
       <div className="relative overflow-hidden">
@@ -24,12 +21,12 @@ export default function CarCard({ car }) {
           className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <button
-          onClick={(e) => { e.preventDefault(); setFav(!fav) }}
+          onClick={(e) => { e.preventDefault(); onToggleFav(car) }}
           className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 shadow transition-all hover:scale-110"
           aria-label="Favoris"
         >
           <Heart
-            className={`h-5 w-5 transition-colors ${fav ? 'fill-primary text-primary' : 'text-gray-600'}`}
+            className={`h-5 w-5 transition-colors ${isFav ? 'fill-primary text-primary' : 'text-gray-600'}`}
           />
         </button>
       </div>

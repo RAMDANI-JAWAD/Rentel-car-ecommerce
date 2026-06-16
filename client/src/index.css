@@ -36,3 +36,115 @@ body {
   background: #ff3c00;
   color: white;
 }
+
+@keyframes panImage {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  33% {
+    transform: scale(1.1) translate(-2%, -1%);
+  }
+  66% {
+    transform: scale(1.05) translate(1%, 1%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.moving-background {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/lamborghini/l1.jpeg');
+  background-size: cover;
+  background-position: center;
+  animation: panImage 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+.moving-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-section > *:not(.moving-background) {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-hero-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-hero-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/rollsroyce/r1.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.contact-hero-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.contact-hero-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 36rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.contact-glass label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-glass input,
+.contact-glass textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.contact-glass input::placeholder,
+.contact-glass textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.contact-glass input:focus,
+.contact-glass textarea:focus {
+  border-color: #ff3c00;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-glass .lucide {
+  color: rgba(255, 255, 255, 0.5);
+}

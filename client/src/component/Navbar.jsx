@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, useMemo } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Car, Menu, X } from 'lucide-react'
 import { cn } from '../lib/utils'
 import { Button } from '../components/ui/button'
@@ -8,11 +8,35 @@ const navLinks = [
   { label: 'Accueil', path: '/' },
   { label: 'Voitures', path: '/#cars' },
   { label: 'À propos', path: '/about' },
+  { label: 'Contact', path: '/contact' },
 ]
+
+function getAuth() {
+  return {
+    token: localStorage.getItem('token'),
+    email: localStorage.getItem('email'),
+  }
+}
+
+function clearAuth() {
+  localStorage.removeItem('token')
+  localStorage.removeItem('email')
+  localStorage.removeItem('name')
+  localStorage.removeItem('profilePicture')
+}
 
 export default function Navbar() {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const { token, email } = useMemo(() => getAuth(), [pathname])
+  const isAdmin = email === 'admin@admin.com'
+
+  const handleLogout = () => {
+    clearAuth()
+    navigate('/')
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
@@ -43,6 +67,28 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => token ? handleLogout() : navigate('/login')}
+            className="ml-4 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
+          >
+            {token ? 'Logout' : 'Login'}
+          </button>
+          {token && (
+            <button
+              onClick={() => navigate('/dashboard')}
+              className="ml-2 rounded-md border border-primary px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+            >
+              Dashboard
+            </button>
+          )}
+          {isAdmin && (
+            <button
+              onClick={() => navigate('/admin')}
+              className="ml-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
+            >
+              Admin
+            </button>
+          )}
         </nav>
 
         <Button
@@ -74,6 +120,28 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <button
+              onClick={() => { token ? handleLogout() : navigate('/login'); setMobileOpen(false) }}
+              className="mt-2 rounded-md bg-primary px-5 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
+            >
+              {token ? 'Logout' : 'Login'}
+            </button>
+            {token && (
+              <button
+                onClick={() => { navigate('/dashboard'); setMobileOpen(false) }}
+                className="rounded-md border border-primary px-5 py-3.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                Dashboard
+              </button>
+            )}
+            {isAdmin && (
+              <button
+                onClick={() => { navigate('/admin'); setMobileOpen(false) }}
+                className="rounded-md bg-primary px-5 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
+              >
+                Admin
+              </button>
+            )}
           </nav>
         </div>
       )}

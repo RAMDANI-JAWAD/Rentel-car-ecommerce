@@ -1,0 +1,71 @@
+[
+  {
+    "email": "ramdanijad9@gmail.com",
+    "password": "1234",
+    "profilePicture": "",
+    "favorites": [
+      {
+        "id": "mercedes-c63s-amg",
+        "name": "Mercedes C63s AMG",
+        "price": "850 000 DH",
+        "year": 2023,
+        "fuel": "Essence",
+        "transmission": "Automatique",
+        "description": "L'alliance parfaite entre sportivité extrême et luxe, une machine faite pour les amateurs de sensations fortes.",
+        "mainImage": "/images/merce/m1.jpeg",
+        "images": [
+          "/images/merce/m1.jpeg",
+          "/images/merce/m2.jpeg",
+          "/images/merce/m3.jpeg"
+        ],
+        "videoId": "xWru1Jf-AqU"
+      }
+    ]
+  },
+  {
+    "email": "admin@admin",
+    "password": "1234",
+    "profilePicture": "",
+    "favorites": []
+  },
+  {
+    "email": "admin@admin.com",
+    "password": "1234",
+    "profilePicture": "https://www.carscoops.com/wp-content/uploads/2022/11/2024-Cadillac-Celestiq-1.jpg",
+    "favorites": [
+      {
+        "id": "mercedes-c63s-amg",
+        "name": "Mercedes C63s AMG",
+        "price": "850 000 DH",
+        "year": 2023,
+        "fuel": "Essence",
+        "transmission": "Automatique",
+        "description": "L'alliance parfaite entre sportivité extrême et luxe, une machine faite pour les amateurs de sensations fortes.",
+        "mainImage": "/images/merce/m1.jpeg",
+        "images": [
+          "/images/merce/m1.jpeg",
+          "/images/merce/m2.jpeg",
+          "/images/merce/m3.jpeg"
+        ],
+        "videoId": "xWru1Jf-AqU"
+      },
+      {
+        "id": "jeep-wrangler-willys",
+        "name": "Jeep Wrangler Willys",
+        "price": "520 000 DH",
+        "year": 2025,
+        "fuel": "Essence",
+        "transmission": "Automatique",
+        "description": "L'icône du tout-terrain : style authentique, robustesse à toute épreuve et une nouvelle couleur pour 2025.",
+        "mainImage": "/images/jeep/j1.jpeg",
+        "images": [
+          "/images/jeep/j1.jpeg",
+          "/images/jeep/j2.jpeg",
+          "/images/jeep/j3.jpeg"
+        ],
+        "videoId": "QHNwSUz7Iog"
+      }
+    ],
+    "name": "Ramdani jawad"
+  }
+]
