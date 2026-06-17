@@ -175,7 +175,7 @@ export default function CarDetail() {
                 </Button>
               )}
               <Button asChild variant="outline" className="gap-2 sm:flex-1">
-                <a href="mailto:ramdani@carshowroom.com">
+                <a href="mailto:ramdanijawad@carshowroom.com">
                   <Mail className="h-4 w-4" />
                   Contactez-nous
                 </a>
