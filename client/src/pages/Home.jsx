@@ -16,9 +16,9 @@ export default function Home() {
   const fuelTypes = ['All', 'Essence', 'Diesel', 'Hybride', 'Électrique']
 
   useEffect(() => {
-    fetch('/data/products.json')
-      .then((r) => r.json())
-      .then(setCars)
+    api.get('/cars')
+      .then((r) => setCars(r.data))
+      .catch(() => {})
   }, [])
 
   useEffect(() => {

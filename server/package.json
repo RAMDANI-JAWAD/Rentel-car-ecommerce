@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "migrate": "node migrate.js"
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",
