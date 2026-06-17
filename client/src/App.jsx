@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard'
 import Admin from './pages/Admin'
 import Contact from './pages/Contact'
 import CarDetail from './pages/CarDetail'
+import EditCar from './pages/EditCar'
 import About from './pages/About'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />
           <Route path="/car/:id" element={<CarDetail />} />
+          <Route path="/edit-car/:id" element={<EditCar />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />

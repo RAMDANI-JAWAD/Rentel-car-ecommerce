@@ -4,6 +4,7 @@ import SearchBar from '../component/SearchBar'
 import CarCard from '../component/CarCard'
 import ServicesSection from '../component/ServicesSection'
 import toast from 'react-hot-toast'
+import api from '../lib/api'
 
 export default function Home() {
   const [cars, setCars] = useState([])
@@ -23,44 +24,31 @@ export default function Home() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (!token) return
-    fetch('http://localhost:5000/api/favorites', {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((r) => r.json())
-      .then(setFavorites)
+    api.get('/favorites')
+      .then((r) => setFavorites(r.data))
       .catch(() => {})
   }, [])
 
   const toggleFavorite = async (car) => {
-    const token = localStorage.getItem('token')
-    if (!token) {
+    if (!localStorage.getItem('token')) {
       toast.error('Please login to add favorites.')
       return
     }
 
     const isFav = favorites.some((f) => f.id === car.id)
 
-    if (isFav) {
-      const res = await fetch(`http://localhost:5000/api/favorites/${car.id}`, {
-        method: 'DELETE',
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      const data = await res.json()
-      if (res.ok) {
-        setFavorites(data.favorites)
+    try {
+      if (isFav) {
+        const res = await api.delete(`/favorites/${car.id}`)
+        setFavorites(res.data.favorites)
         toast.success('Removed from favorites.')
-      }
-    } else {
-      const res = await fetch('http://localhost:5000/api/favorites', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ car }),
-      })
-      const data = await res.json()
-      if (res.ok) {
-        setFavorites(data.favorites)
+      } else {
+        const res = await api.post('/favorites', { car })
+        setFavorites(res.data.favorites)
         toast.success('Added to favorites.')
       }
+    } catch {
+      toast.error('Failed to update favorites.')
     }
   }
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Card, CardContent } from '../components/ui/card'
 import { Heart, Shield } from 'lucide-react'
 import toast from 'react-hot-toast'
+import api from '../lib/api'
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -20,25 +21,17 @@ export default function Dashboard() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (!token) return
-    fetch('http://localhost:5000/api/favorites', {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((r) => r.json())
-      .then(setFavorites)
+    api.get('/favorites')
+      .then((r) => setFavorites(r.data))
       .catch(() => {})
   }, [])
 
   const removeFavorite = async (carId) => {
-    const token = localStorage.getItem('token')
-    const res = await fetch(`http://localhost:5000/api/favorites/${carId}`, {
-      method: 'DELETE',
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    const data = await res.json()
-    if (res.ok) {
-      setFavorites(data.favorites)
+    try {
+      const res = await api.delete(`/favorites/${carId}`)
+      setFavorites(res.data.favorites)
       toast.success('Removed from favorites.')
-    }
+    } catch {}
   }
 
   const handleLogout = () => {
@@ -51,25 +44,15 @@ export default function Dashboard() {
   }
 
   const handleEditProfile = async () => {
-    const token = localStorage.getItem('token')
     try {
-      const res = await fetch('http://localhost:5000/api/user/update', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ name: editName, profilePicture: editImage }),
-      })
-      const data = await res.json()
-      if (!res.ok) {
-        toast.error(data.message)
-        return
-      }
-      localStorage.setItem('name', data.name)
-      localStorage.setItem('profilePicture', data.profilePicture)
+      const res = await api.put('/user/update', { name: editName, profilePicture: editImage })
+      localStorage.setItem('name', res.data.name)
+      localStorage.setItem('profilePicture', res.data.profilePicture)
       setEditing(false)
       setVersion((v) => v + 1)
-      toast.success(data.message)
-    } catch {
-      toast.error('Failed to update profile.')
+      toast.success(res.data.message)
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Failed to update profile.')
     }
   }
 

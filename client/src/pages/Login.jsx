@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import api from '../lib/api'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -9,18 +10,8 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      })
-
-      const data = await res.json()
-
-      if (!res.ok) {
-        toast.error(data.message)
-        return
-      }
+      const res = await api.post('/login', { email, password })
+      const data = res.data
 
       localStorage.setItem('token', data.token)
       localStorage.setItem('email', data.email)
@@ -28,8 +19,8 @@ export default function Login() {
       localStorage.setItem('profilePicture', data.profilePicture || '')
       toast.success(data.message)
       navigate('/dashboard')
-    } catch {
-      toast.error('Login failed')
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Login failed')
     }
   }
 

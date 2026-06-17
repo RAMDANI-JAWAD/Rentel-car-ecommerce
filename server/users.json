@@ -19,6 +19,22 @@
           "/images/merce/m3.jpeg"
         ],
         "videoId": "xWru1Jf-AqU"
+      },
+      {
+        "id": "volkswagen-golf-8-r",
+        "name": "Volkswagen Golf 8 R",
+        "price": "480 000 DH",
+        "year": 2024,
+        "fuel": "Essence",
+        "transmission": "Automatique",
+        "description": "La Golf 8 R redéfinit la sportivité compacte avec sa transmission intégrale 4MOTION et son design affûté.",
+        "mainImage": "/images/golf/g1.jpg",
+        "images": [
+          "/images/golf/g1.jpg",
+          "/images/golf/g2.jpg",
+          "/images/golf/g3.jpg"
+        ],
+        "videoId": "3rEsbKx3L18"
       }
     ]
   },

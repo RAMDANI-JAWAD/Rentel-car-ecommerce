@@ -8,7 +8,11 @@
     "transmission": "Automatique",
     "description": "L'excellence en mouvement : design agressif, moteur surpuissant et sensations de pilotage inégalées.",
     "mainImage": "/images/bmw/b1.jpeg",
-    "images": ["/images/bmw/b1.jpeg", "/images/bmw/b2.jpeg", "/images/bmw/b3.jpeg"],
+    "images": [
+      "/images/bmw/b1.jpeg",
+      "/images/bmw/b2.jpeg",
+      "/images/bmw/b3.jpeg"
+    ],
     "videoId": "tmxl0_3kn7g"
   },
   {
@@ -20,7 +24,11 @@
     "transmission": "Automatique",
     "description": "L'alliance parfaite entre sportivité extrême et luxe, une machine faite pour les amateurs de sensations fortes.",
     "mainImage": "/images/merce/m1.jpeg",
-    "images": ["/images/merce/m1.jpeg", "/images/merce/m2.jpeg", "/images/merce/m3.jpeg"],
+    "images": [
+      "/images/merce/m1.jpeg",
+      "/images/merce/m2.jpeg",
+      "/images/merce/m3.jpeg"
+    ],
     "videoId": "xWru1Jf-AqU"
   },
   {
@@ -32,7 +40,11 @@
     "transmission": "Automatique",
     "description": "L'icône du tout-terrain : style authentique, robustesse à toute épreuve et une nouvelle couleur pour 2025.",
     "mainImage": "/images/jeep/j1.jpeg",
-    "images": ["/images/jeep/j1.jpeg", "/images/jeep/j2.jpeg", "/images/jeep/j3.jpeg"],
+    "images": [
+      "/images/jeep/j1.jpeg",
+      "/images/jeep/j2.jpeg",
+      "/images/jeep/j3.jpeg"
+    ],
     "videoId": "QHNwSUz7Iog"
   },
   {
@@ -43,14 +55,17 @@
     "fuel": "Essence",
     "transmission": "Automatique",
     "description": "La Porsche Panamera allie la sportivité d'une authentique voiture de course au confort d'une berline de luxe exclusive.",
-    "mainImage": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800",
+    "mainImage": "/images/porsline/p1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200",
-      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=1200",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1200",
-      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1200"
+      "/images/porsline/p1.jpg",
+      "/images/porsline/p2.jpg",
+      "/images/porsline/p3.jpg"
     ],
-    "videoId": null
+    "videoId": null,
+    "brand": "",
+    "image2": "/images/porsline/p2.jpg",
+    "image3": "/images/porsline/p3.jpg",
+    "videoUrl": "https://youtu.be/-QfRAwg3gkM?si=JeyMML4ZT3qXPaYd"
   },
   {
     "id": "volkswagen-golf-8-r",
@@ -60,11 +75,11 @@
     "fuel": "Essence",
     "transmission": "Automatique",
     "description": "La Golf 8 R redéfinit la sportivité compacte avec sa transmission intégrale 4MOTION et son design affûté.",
-    "mainImage": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800",
+    "mainImage": "/images/golf/g1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800",
-      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800",
-      "https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=800"
+      "/images/golf/g1.jpg",
+      "/images/golf/g2.jpg",
+      "/images/golf/g3.jpg"
     ],
     "videoId": "3rEsbKx3L18"
   },
@@ -77,20 +92,32 @@
     "transmission": "Automatique",
     "description": "Le Range Rover Sport conjugue un luxe contemporain et des technologies de pointe avec des performances dynamiques exceptionnelles.",
     "mainImage": "/images/range/range1.jpg.jpeg",
-    "images": ["/images/range/range1.jpg.jpeg", "/images/range/range2.jpg.jpeg", "/images/range/range3.jpg.jpeg"],
+    "images": [
+      "/images/range/range1.jpg.jpeg",
+      "/images/range/range2.jpg.jpeg",
+      "/images/range/range3.jpg.jpeg"
+    ],
     "videoId": "jD7j2vaknr4"
   },
   {
     "id": "mercedes-benz-g-class",
     "name": "Mercedes-Benz G-Class",
-    "price": "2 300 000 DH",
+    "price": "2 300 00 DH",
     "year": 2024,
     "fuel": "Essence",
     "transmission": "Automatique",
     "description": "L'icône du tout-terrain de luxe. Design légendaire et confort absolu.",
     "mainImage": "/images/gclas/g1.jpeg",
-    "images": ["/images/gclas/g1.jpeg", "/images/gclas/g2.jpeg", "/images/gclas/g3.jpeg"],
-    "videoId": null
+    "images": [
+      "/images/gclas/g1.jpeg",
+      "/images/gclas/g2.jpeg",
+      "/images/gclas/g3.jpeg"
+    ],
+    "videoId": null,
+    "brand": "",
+    "image2": "https://getcybertrucked.com/wp-content/uploads/2024/04/Mercedes-Benz-G-Class-cars-1536x864.png",
+    "image3": "",
+    "videoUrl": "https://youtu.be/ZsDEWWRx-dA?si=byT-jyIoWoakEJ6y"
   },
   {
     "id": "jaguar-f-type-coupe",
@@ -101,7 +128,11 @@
     "transmission": "Automatique",
     "description": "Une véritable voiture de sport britannique. La Jaguar F-Type combine un design spectaculaire, des performances dynamiques et une sonorité moteur envoûtante.",
     "mainImage": "/images/jaguar/j1.jpeg",
-    "images": ["/images/jaguar/j1.jpeg", "/images/jaguar/j2.jpeg", "/images/jaguar/j3.jpeg"],
+    "images": [
+      "/images/jaguar/j1.jpeg",
+      "/images/jaguar/j2.jpeg",
+      "/images/jaguar/j3.jpeg"
+    ],
     "videoId": "sZ59-V5eN_c"
   },
   {
@@ -113,8 +144,16 @@
     "transmission": "Automatique",
     "description": "La citadine branchée avec une motorisation hybride efficiente et un style moderne.",
     "mainImage": "/images/clio/c1.jpeg",
-    "images": ["/images/clio/c1.jpeg", "/images/clio/c2.jpeg", "/images/clio/c3.jpeg"],
-    "videoId": null
+    "images": [
+      "/images/clio/c1.jpeg",
+      "/images/clio/c2.jpeg",
+      "/images/clio/c3.jpeg"
+    ],
+    "videoId": null,
+    "brand": "",
+    "image2": "",
+    "image3": "",
+    "videoUrl": "https://youtu.be/fKB8IqmmLrg?si=Y705nYvLElJdikiq"
   },
   {
     "id": "dacia-sandero-stepway-extreme",
@@ -125,7 +164,11 @@
     "transmission": "Manuelle",
     "description": "Le crossover urbain numéro 1 au Maroc dans sa version haut de gamme Extreme.",
     "mainImage": "/images/dacia/d1.jpeg",
-    "images": ["/images/dacia/d1.jpeg", "/images/dacia/d2.jpeg", "/images/dacia/d3.jpeg"],
+    "images": [
+      "/images/dacia/d1.jpeg",
+      "/images/dacia/d2.jpeg",
+      "/images/dacia/d3.jpeg"
+    ],
     "videoId": "HLGVwEfbN3w"
   },
   {
@@ -137,7 +180,11 @@
     "transmission": "Automatique",
     "description": "La première supercar hybride rechargeable de Ferrari.",
     "mainImage": "/images/ferrari/f1.jpeg",
-    "images": ["/images/ferrari/f1.jpeg", "/images/ferrari/F2.jpeg", "/images/ferrari/f3.jpeg"],
+    "images": [
+      "/images/ferrari/f1.jpeg",
+      "/images/ferrari/F2.jpeg",
+      "/images/ferrari/f3.jpeg"
+    ],
     "videoId": "MvVXL-vBQs0"
   },
   {
@@ -149,7 +196,11 @@
     "transmission": "Automatique",
     "description": "Découvrez la nouvelle génération de la berline la plus vendue au monde.",
     "mainImage": "/images/toyota/t1.jpeg",
-    "images": ["/images/toyota/t1.jpeg", "/images/toyota/t2.jpeg", "/images/toyota/t3.jpeg"],
+    "images": [
+      "/images/toyota/t1.jpeg",
+      "/images/toyota/t2.jpeg",
+      "/images/toyota/t3.jpeg"
+    ],
     "videoId": "B3pFkicdb9s"
   },
   {
@@ -161,7 +212,11 @@
     "transmission": "Automatique",
     "description": "L'incarnation de la performance brute et du design italien iconique.",
     "mainImage": "/images/lamborghini/l1.jpeg",
-    "images": ["/images/lamborghini/l1.jpeg", "/images/lamborghini/l2.jpeg", "/images/lamborghini/l3.jpeg"],
+    "images": [
+      "/images/lamborghini/l1.jpeg",
+      "/images/lamborghini/l2.jpeg",
+      "/images/lamborghini/l3.jpeg"
+    ],
     "videoId": "uNpYRRbaX0I"
   },
   {
@@ -173,7 +228,11 @@
     "transmission": "Automatique",
     "description": "L'alliance parfaite entre le luxe, le confort absolu et les dernières innovations technologiques.",
     "mainImage": "/images/mercedes/m1.jpeg",
-    "images": ["/images/mercedes/m1.jpeg", "/images/mercedes/m2.jpeg", "/images/mercedes/m3.jpeg"],
+    "images": [
+      "/images/mercedes/m1.jpeg",
+      "/images/mercedes/m2.jpeg",
+      "/images/mercedes/m3.jpeg"
+    ],
     "videoId": "rpr27glGwA4"
   },
   {
@@ -185,7 +244,11 @@
     "transmission": "Automatique",
     "description": "Le summum de la performance électrique dans un design rafraîchi.",
     "mainImage": "/images/tesla/t1.jpeg",
-    "images": ["/images/tesla/t1.jpeg", "/images/tesla/t2.jpeg", "/images/tesla/t3.jpeg"],
+    "images": [
+      "/images/tesla/t1.jpeg",
+      "/images/tesla/t2.jpeg",
+      "/images/tesla/t3.jpeg"
+    ],
     "videoId": "nS2S0HT1zHk"
   },
   {
@@ -197,7 +260,11 @@
     "transmission": "Automatique",
     "description": "Le SUV haut de gamme alliant élégance, performance hybride et confort technologique.",
     "mainImage": "/images/touareg/t1.jpeg",
-    "images": ["/images/touareg/t1.jpeg", "/images/touareg/t2.jpeg", "/images/touareg/t3.jpeg"],
+    "images": [
+      "/images/touareg/t1.jpeg",
+      "/images/touareg/t2.jpeg",
+      "/images/touareg/t3.jpeg"
+    ],
     "videoId": "veRxnuANj_0"
   },
   {
@@ -209,7 +276,11 @@
     "transmission": "Automatique",
     "description": "L'icône du plaisir de conduire, version John Cooper Works.",
     "mainImage": "/images/mini/m1.jpeg",
-    "images": ["/images/mini/m1.jpeg", "/images/mini/m2.jpeg", "/images/mini/m3.jpeg"],
+    "images": [
+      "/images/mini/m1.jpeg",
+      "/images/mini/m2.jpeg",
+      "/images/mini/m3.jpeg"
+    ],
     "videoId": "o6bFlbJraYg"
   },
   {
@@ -221,7 +292,11 @@
     "transmission": "Automatique",
     "description": "Le pick-up légendaire en version GR Sport : design agressif, performances tout-terrain et robustesse inégalée.",
     "mainImage": "/images/hilux/h1.jpeg",
-    "images": ["/images/hilux/h1.jpeg", "/images/hilux/h2.jpeg", "/images/hilux/h3.jpeg"],
+    "images": [
+      "/images/hilux/h1.jpeg",
+      "/images/hilux/h2.jpeg",
+      "/images/hilux/h3.jpeg"
+    ],
     "videoId": "taGtFTIn-vg"
   },
   {
@@ -233,7 +308,11 @@
     "transmission": "Automatique",
     "description": "Découvrez la nouvelle Peugeot 208, une citadine qui allie esthétique moderne, technologie i-Cockpit et efficacité.",
     "mainImage": "/images/peugeot/p1.jpeg",
-    "images": ["/images/peugeot/p1.jpeg", "/images/peugeot/p2.jpeg", "/images/peugeot/p3.jpeg"],
+    "images": [
+      "/images/peugeot/p1.jpeg",
+      "/images/peugeot/p2.jpeg",
+      "/images/peugeot/p3.jpeg"
+    ],
     "videoId": "F8LiEUljcpQ"
   },
   {
@@ -245,8 +324,16 @@
     "transmission": "Automatique",
     "description": "La fusion parfaite entre la polyvalence d'un break et la performance pure d'une RS.",
     "mainImage": "/images/rs6/rs1.jpeg",
-    "images": ["/images/rs6/rs1.jpeg", "/images/rs6/rs2.jpeg", "/images/rs6/rs3.jpeg"],
-    "videoId": "I1yj0a6OZHk"
+    "images": [
+      "/images/rs6/rs1.jpeg",
+      "/images/rs6/rs2.jpeg",
+      "/images/rs6/rs3.jpeg"
+    ],
+    "videoId": "I1yj0a6OZHk",
+    "brand": "",
+    "image2": "https://media.autoexpress.co.uk/image/private/s--zz4E75kI--/t_content-image-full-mobile@2/v1575316161/autoexpress/2019/11/15_24.jpg",
+    "image3": "",
+    "videoUrl": ""
   },
   {
     "id": "rolls-royce-cullinan",
@@ -257,7 +344,31 @@
     "transmission": "Automatique",
     "description": "L'apogée du luxe automobile. Une présence majestueuse et une finition artisanale sans égale.",
     "mainImage": "/images/rollsroyce/r1.jpeg",
-    "images": ["/images/rollsroyce/r1.jpeg", "/images/rollsroyce/r2.jpeg", "/images/rollsroyce/r3.jpeg"],
+    "images": [
+      "/images/rollsroyce/r1.jpeg",
+      "/images/rollsroyce/r2.jpeg",
+      "/images/rollsroyce/r3.jpeg"
+    ],
     "videoId": "IYNAd6_9lVo"
+  },
+  {
+    "id": "hyundai-elandra-2026",
+    "name": "Hyundai Elandra 2026",
+    "price": "240000 DH",
+    "year": 2026,
+    "fuel": "Essence",
+    "transmission": "Automatique",
+    "description": "La Hyundai Elantra 2026 est une berline compacte moderne qui combine style audacieux, technologies avancées et plusieurs motorisations adaptées à différents profils de conducteurs. ",
+    "mainImage": "/images/hyundai/h1.jpg",
+    "images": [
+      "/images/hyundai/h1.jpg",
+      "/images/hyundai/h2.jpg",
+      "/images/hyundai/h3.jpg"
+    ],
+    "brand": "Hyundai",
+    "image2": "/images/hyundai/h2.jpg",
+    "image3": "/images/hyundai/h3.jpg",
+    "videoUrl": "https://youtu.be/S9F-ptFoZNs?si=_mY4K_TNWbqM2JUA",
+    "videoId": ""
   }
 ]

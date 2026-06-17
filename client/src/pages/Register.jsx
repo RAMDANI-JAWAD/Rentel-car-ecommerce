@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import api from '../lib/api'
 
 export default function Register() {
   const [email, setEmail] = useState('')
@@ -10,22 +11,11 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, profilePicture }),
-      })
-
-      if (!res.ok) {
-        const err = await res.json()
-        toast.error(err.message)
-        return
-      }
-
+      await api.post('/register', { email, password, profilePicture })
       toast.success('User registered successfully.')
       navigate('/login')
-    } catch {
-      toast.error('Registration failed')
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Registration failed')
     }
   }
 
