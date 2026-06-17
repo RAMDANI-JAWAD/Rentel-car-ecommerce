@@ -14,7 +14,7 @@ const navLinks = [
 function getAuth() {
   return {
     token: localStorage.getItem('token'),
-    email: localStorage.getItem('email'),
+    role: localStorage.getItem('role'),
   }
 }
 
@@ -23,6 +23,7 @@ function clearAuth() {
   localStorage.removeItem('email')
   localStorage.removeItem('name')
   localStorage.removeItem('profilePicture')
+  localStorage.removeItem('role')
 }
 
 export default function Navbar() {
@@ -30,8 +31,9 @@ export default function Navbar() {
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  const { token, email } = useMemo(() => getAuth(), [pathname])
-  const isAdmin = email === 'admin@admin.com'
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const { token, role } = useMemo(() => getAuth(), [pathname])
+  const isAdmin = role === 'admin'
 
   const handleLogout = () => {
     clearAuth()

@@ -17,6 +17,7 @@ export default function Login() {
       localStorage.setItem('email', data.email)
       localStorage.setItem('name', data.name || '')
       localStorage.setItem('profilePicture', data.profilePicture || '')
+      localStorage.setItem('role', data.role || 'user')
       toast.success(data.message)
       navigate('/dashboard')
     } catch (err) {

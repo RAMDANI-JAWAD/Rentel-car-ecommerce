@@ -11,7 +11,11 @@ exports.register = async (req, res) => {
   try {
     const exists = await User.findOne({ email });
     if (exists) return res.status(409).json({ message: 'Email already exists.' });
-    await User.create({ email, password, name: name || '', profilePicture: profilePicture || '', favorites: [] });
+    const count = await User.countDocuments();
+    await User.create({
+      email, password, name: name || '', profilePicture: profilePicture || '',
+      role: count === 0 ? 'admin' : 'user', favorites: [],
+    });
     res.json({ message: 'User registered successfully.' });
   } catch {
     res.status(500).json({ message: 'Registration failed.' });
@@ -24,7 +28,7 @@ exports.login = async (req, res) => {
     const user = await User.findOne({ email, password });
     if (user) {
       const token = jwt.sign(
-        { email: user.email, profilePicture: user.profilePicture, name: user.name },
+        { email: user.email, profilePicture: user.profilePicture, name: user.name, role: user.role },
         JWT_SECRET,
         { expiresIn: '1h' }
       );
@@ -34,6 +38,7 @@ exports.login = async (req, res) => {
         email: user.email,
         name: user.name || '',
         profilePicture: user.profilePicture || '',
+        role: user.role,
       });
     }
     res.status(401).json({ message: 'Invalid email or password.' });

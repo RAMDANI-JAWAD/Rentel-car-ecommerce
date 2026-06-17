@@ -31,7 +31,7 @@ export default function CarDetail() {
   const [selectedImage, setSelectedImage] = useState(0)
   const [showingVideo, setShowingVideo] = useState(false)
   const [isZoomed, setIsZoomed] = useState(false)
-  const userEmail = localStorage.getItem('email')
+  const isAdmin = localStorage.getItem('role') === 'admin'
 
   useEffect(() => {
     api.get('/cars')
@@ -168,7 +168,7 @@ export default function CarDetail() {
             </div>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-              {userEmail === 'admin@admin.com' && (
+              {isAdmin && (
                 <Button onClick={() => navigate(`/edit-car/${id}`)} className="gap-2 sm:flex-1">
                   <Pencil className="h-4 w-4" />
                   Modifier

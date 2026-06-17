@@ -16,7 +16,7 @@ export default function Dashboard() {
   const email = localStorage.getItem('email') || ''
   const name = localStorage.getItem('name') || ''
   const profilePicture = localStorage.getItem('profilePicture') || ''
-  const isAdmin = email === 'admin@admin.com'
+  const isAdmin = localStorage.getItem('role') === 'admin'
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -31,7 +31,9 @@ export default function Dashboard() {
       const res = await api.delete(`/favorites/${carId}`)
       setFavorites(res.data.favorites)
       toast.success('Removed from favorites.')
-    } catch {}
+    } catch {
+      toast.error('Failed to remove favorite.')
+    }
   }
 
   const handleLogout = () => {
@@ -39,6 +41,7 @@ export default function Dashboard() {
     localStorage.removeItem('email')
     localStorage.removeItem('name')
     localStorage.removeItem('profilePicture')
+    localStorage.removeItem('role')
     toast.success('Logged out successfully.')
     navigate('/login')
   }
@@ -151,7 +154,7 @@ export default function Dashboard() {
               onClick={() => navigate('/admin')}
               className="rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover"
             >
-              Manage Cars
+              Dashboard
             </button>
           </div>
         </div>

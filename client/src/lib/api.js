@@ -12,14 +12,19 @@ api.interceptors.request.use((config) => {
   return config
 })
 
+function clearAuth() {
+  localStorage.removeItem('token')
+  localStorage.removeItem('email')
+  localStorage.removeItem('name')
+  localStorage.removeItem('profilePicture')
+  localStorage.removeItem('role')
+}
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && [401, 403].includes(error.response.status)) {
-      localStorage.removeItem('token')
-      localStorage.removeItem('email')
-      localStorage.removeItem('name')
-      localStorage.removeItem('profilePicture')
+      clearAuth()
       window.location.href = '/login'
     }
     return Promise.reject(error)

@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const dns = require('dns');
+
+dns.setServers(['1.1.1.1', '8.8.8.8']);
 
 const connectDB = async () => {
   try {
@@ -9,7 +12,6 @@ const connectDB = async () => {
     console.error('Error name:', err.name);
     console.error('Error message:', err.message);
     console.error('Full error:', err);
-    process.exit(1);
   }
 };
 
